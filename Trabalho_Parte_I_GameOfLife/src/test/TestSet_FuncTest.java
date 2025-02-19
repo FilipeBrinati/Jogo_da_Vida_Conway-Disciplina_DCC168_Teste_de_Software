@@ -1,15 +1,15 @@
 package test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.Assert.*;
 
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
 
 import main.Analise;
 import main.Tabuleiro;
 
-class TestSet_Func {
+public class TestSet_FuncTest {
 	/*
 	 * Essa classe deve ter todos os testes para poderem ser rodados
 	 * apenas uma vez. A separação dos outros arquivos foi realizado
@@ -21,20 +21,20 @@ class TestSet_Func {
     private Tabuleiro tabuleiroEsperado;
     private Analise analise;
 
-    @BeforeEach
-    void setUp() {
+    @Before
+    public void setUp() {
         tabuleiroInicial = new Tabuleiro(6);
         tabuleiroEsperado = new Tabuleiro(6);
         analise = new Analise(tabuleiroInicial);
     }
-    @AfterEach
-    void tearDown() {
+    @After
+    public void tearDown() {
     	tabuleiroInicial = null;
         tabuleiroEsperado = null;
         analise = null;
     }
     @Test 
-	void CT1_testEmptyBoard(){
+    public void CT1_testEmptyBoard(){
 		tabuleiroInicial.setEspaco(new int[][] {
 			{0, 0, 0, 0, 0, 0},
 			{0, 0, 0, 0, 0, 0},
@@ -57,7 +57,7 @@ class TestSet_Func {
         assertArrayEquals(tabuleiroInicial.getEspaco(), tabuleiroEsperado.getEspaco());
 	}
     @Test
-    void CT2_testCMWithThreeNeighbors() {
+    public void CT2_testCMWithThreeNeighbors() {
         tabuleiroInicial.setEspaco(new int[][] {
             {0, 0, 1, 0, 0, 0},
             {0, 0, 0, 0, 0, 0},
@@ -79,7 +79,7 @@ class TestSet_Func {
     }
 
     @Test
-    void CT3_testCVDiesUnderFlow() {
+    public void CT3_testCVDiesUnderFlow() {
         tabuleiroInicial.setEspaco(new int[][] {
             {1, 0, 0, 0, 0, 0},
             {0, 0, 0, 0, 0, 0},
@@ -101,7 +101,7 @@ class TestSet_Func {
     }
 
     @Test
-    void CT4_testCVSurvivesWithTwoOrThreeNeighbors() {
+    public void CT4_testCVSurvivesWithTwoOrThreeNeighbors() {
         tabuleiroInicial.setEspaco(new int[][] {
             {0, 0, 1, 0, 0, 0},
             {0, 1, 0, 0, 0, 0},
@@ -123,7 +123,7 @@ class TestSet_Func {
     }
 
     @Test
-    void CT5_testCVDiesOverFlow() {
+    public void CT5_testCVDiesOverFlow() {
         tabuleiroInicial.setEspaco(new int[][] {
             {0, 0, 0, 0, 0, 0},
             {0, 0, 0, 1, 1, 0},
@@ -144,7 +144,7 @@ class TestSet_Func {
         assertArrayEquals(tabuleiroInicial.getEspaco(), tabuleiroEsperado.getEspaco());
     }
     @Test 
-	void CT6_testStillLifesBlock(){
+    public void CT6_testStillLifesBlock(){
 		tabuleiroInicial.setEspaco(new int[][] {
 			{0, 0, 0, 0, 0, 0},
 			{0, 0, 0, 0, 0, 0},
@@ -166,8 +166,8 @@ class TestSet_Func {
         }
         assertArrayEquals(tabuleiroInicial.getEspaco(), tabuleiroEsperado.getEspaco());
 	}
-		@Test
-	void CT7_testStillLifesBeehive() {
+	@Test
+	public void CT7_testStillLifesBeehive() {
 	    tabuleiroInicial.setEspaco(new int[][] {
 	        {0, 0, 0, 0, 0, 0},
 	        {0, 0, 0, 1, 0, 0},
@@ -190,7 +190,7 @@ class TestSet_Func {
 	    assertArrayEquals(tabuleiroInicial.getEspaco(), tabuleiroEsperado.getEspaco());
 	}
 	@Test
-	void CT8_testStillLifesLoaf() {
+	public void CT8_testStillLifesLoaf() {
 	    tabuleiroInicial.setEspaco(new int[][] {
 	        {0, 0, 0, 0, 0, 0},
 	        {0, 0, 1, 1, 0, 0},
@@ -213,7 +213,7 @@ class TestSet_Func {
 	    assertArrayEquals(tabuleiroInicial.getEspaco(), tabuleiroEsperado.getEspaco());
 	}
 	@Test
-	void CT9_testStillLifesBoat() {
+	public void CT9_testStillLifesBoat() {
 	    tabuleiroInicial.setEspaco(new int[][] {
 	        {0, 0, 0, 0, 0, 0},
 	        {0, 1, 1, 0, 0, 0},
@@ -237,7 +237,7 @@ class TestSet_Func {
 	    assertArrayEquals(tabuleiroInicial.getEspaco(), tabuleiroEsperado.getEspaco());
 	}
 	@Test
-	void CT10_testStillLifesTub() {
+	public void CT10_testStillLifesTub() {
 	    tabuleiroInicial.setEspaco(new int[][] {
 	        {0, 0, 0, 0, 0, 0},
 	        {0, 0, 1, 0, 0, 0},
@@ -260,7 +260,7 @@ class TestSet_Func {
 	    assertArrayEquals(tabuleiroInicial.getEspaco(), tabuleiroEsperado.getEspaco());
 	}
 	@Test
-	void CT11_testOscillatorsBlinker() {
+	public void CT11_testOscillatorsBlinker() {
 	    tabuleiroInicial.setEspaco(new int[][] {
 	        {0, 0, 0, 0, 0, 0},
 	        {0, 0, 0, 0, 0, 0},
@@ -285,7 +285,7 @@ class TestSet_Func {
 	    assertArrayEquals(tabuleiroInicial.getEspaco(), tabuleiroStarter.getEspaco());
 	}
 	@Test
-	void CT12_testOscillatorsToad() {
+	public void CT12_testOscillatorsToad() {
 	    tabuleiroInicial.setEspaco(new int[][] {
 	        {0, 0, 0, 0, 0, 0},
 	        {0, 0, 1, 0, 0, 0},
@@ -310,7 +310,7 @@ class TestSet_Func {
 	    assertArrayEquals(tabuleiroInicial.getEspaco(), tabuleiroStarter.getEspaco());
 	}
 	@Test
-	void CT13_testOscillatorsBeacon() {
+	public void CT13_testOscillatorsBeacon() {
 	    tabuleiroInicial.setEspaco(new int[][] {
 	        {1, 1, 0, 0, 0, 0},
 	        {1, 1, 0, 0, 0, 0},
@@ -335,7 +335,7 @@ class TestSet_Func {
 	    assertArrayEquals(tabuleiroInicial.getEspaco(), tabuleiroStarter.getEspaco());
 	}
 	@Test
-	void CT14_testSpaceShipGlider() {
+	public void CT14_testSpaceShipGlider() {
 	    tabuleiroInicial.setEspaco(new int[][] {
 	        {0, 0, 1, 0, 0, 0},
 	        {1, 0, 1, 0, 0, 0},
@@ -389,7 +389,7 @@ class TestSet_Func {
 	    assertArrayEquals(tabuleiroInicial.getEspaco(), tabuleiroEsperado.getEspaco());
 	}
 	@Test
-	void CT15_testSpaceShipLWSS() {
+	public void CT15_testSpaceShipLWSS() {
 	    tabuleiroInicial.setEspaco(new int[][] {
 	        {0, 0, 0, 0, 0, 0},
 	        {0, 0, 0, 0, 0, 0},
@@ -443,7 +443,7 @@ class TestSet_Func {
 	    assertArrayEquals(tabuleiroInicial.getEspaco(), tabuleiroEsperado.getEspaco());
 	}
 	 @Test
-	    void CeE1() {
+	 public void CeE1() {
 		    tabuleiroInicial.setEspaco(new int[][] {
 		        {0, 0, 0, 0, 0, 0},
 		        {0, 0, 0, 0, 0, 0},
@@ -465,7 +465,7 @@ class TestSet_Func {
 		}
 	    
 	    @Test
-	    void CeE2() {
+	    public void CeE2() {
 		    tabuleiroInicial.setEspaco(new int[][] {
 		        {0, 0, 0, 0, 0, 0},
 		        {0, 0, 0, 1, 0, 0},
@@ -486,7 +486,7 @@ class TestSet_Func {
 		    assertArrayEquals(tabuleiroInicial.getEspaco(), tabuleiroEsperado.getEspaco());
 		}
 	    @Test
-	    void CeE3() {
+	    public void CeE3() {
 		    tabuleiroInicial.setEspaco(new int[][] {
 		        {0, 0, 0, 0, 0, 0},
 		        {0, 1, 0, 1, 0, 0},
@@ -507,7 +507,7 @@ class TestSet_Func {
 		    assertArrayEquals(tabuleiroInicial.getEspaco(), tabuleiroEsperado.getEspaco());
 		}
 	    @Test
-	    void CeE4() {
+	    public void CeE4() {
 		    tabuleiroInicial.setEspaco(new int[][] {
 		        {0, 0, 0, 0, 0, 0},
 		        {0, 1, 0, 1, 0, 0},
@@ -528,7 +528,7 @@ class TestSet_Func {
 		    assertArrayEquals(tabuleiroInicial.getEspaco(), tabuleiroEsperado.getEspaco());
 		}
 	    @Test
-	    void CeE5() {
+	    public void CeE5() {
 		    tabuleiroInicial.setEspaco(new int[][] {
 		        {0, 0, 0, 0, 0, 0},
 		        {0, 1, 0, 0, 0, 0},
@@ -549,7 +549,7 @@ class TestSet_Func {
 		    assertArrayEquals(tabuleiroInicial.getEspaco(), tabuleiroEsperado.getEspaco());
 		}
 	    @Test
-	    void CeE6() {
+	    public void CeE6() {
 		    tabuleiroInicial.setEspaco(new int[][] {
 		        {0, 0, 0, 0, 0, 0},
 		        {0, 1, 0, 1, 0, 0},
@@ -570,7 +570,7 @@ class TestSet_Func {
 		    assertArrayEquals(tabuleiroInicial.getEspaco(), tabuleiroEsperado.getEspaco());
 		}
 	    @Test
-	    void CeE7() {
+	    public void CeE7() {
 		    tabuleiroInicial.setEspaco(new int[][] {
 		        {0, 0, 0, 0, 0, 0},
 		        {0, 0, 0, 0, 0, 0},
@@ -591,7 +591,7 @@ class TestSet_Func {
 		    assertArrayEquals(tabuleiroInicial.getEspaco(), tabuleiroEsperado.getEspaco());
 		}
 	    @Test
-	    void CeE8() {
+	    public void CeE8() {
 		    tabuleiroInicial.setEspaco(new int[][] {
 		        {0, 0, 0, 0, 0, 0},
 		        {0, 0, 0, 1, 0, 0},
@@ -612,7 +612,7 @@ class TestSet_Func {
 		    assertArrayEquals(tabuleiroInicial.getEspaco(), tabuleiroEsperado.getEspaco());
 		}
 	    @Test
-	    void CeE9() {
+	    public void CeE9() {
 		    tabuleiroInicial.setEspaco(new int[][] {
 		        {0, 0, 0, 0, 0, 0},
 		        {0, 0, 0, 1, 0, 0},
@@ -633,7 +633,7 @@ class TestSet_Func {
 		    assertArrayEquals(tabuleiroInicial.getEspaco(), tabuleiroEsperado.getEspaco());
 		}
 	    @Test
-	    void CeE10() {
+	    public void CeE10() {
 		    tabuleiroInicial.setEspaco(new int[][] {
 		        {0, 0, 0, 0, 0, 0},
 		        {0, 1, 0, 1, 0, 0},
