@@ -53,14 +53,5 @@ public class Tabuleiro {
 		return espaco[x][y];
 	}
 	public int getTamanho() {return tamanho;}
-	public static void main (String [] args) {
-		Tabuleiro t = new Tabuleiro(6);
-		t.printEspaco();
-		t.generateRandomEspaco();
-		t.printEspaco();
-	}
-
-	
-	
 
 }
