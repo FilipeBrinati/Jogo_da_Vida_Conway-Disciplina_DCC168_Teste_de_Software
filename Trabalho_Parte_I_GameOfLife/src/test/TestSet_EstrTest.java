@@ -29,7 +29,7 @@ class TestSet_EstrTest {
     }
 
     @Test
-    void CTN3_testCelulaMorrePorSolidão() {
+    void CT1_testCelulaMorrePorSolidão() {
         tabuleiroInicial.setEspaco(new int[][] {
             {0, 1, 0, 0, 0, 0},
             {0, 1, 0, 0, 0, 0},
@@ -52,7 +52,7 @@ class TestSet_EstrTest {
     
 
     @Test
-    void CTN4_testCelulaPermaneceViva() {
+    void CT2_testCelulaPermaneceViva() {
         tabuleiroInicial.setEspaco(new int[][] {
             {0, 1, 0, 0, 0, 0},
             {0, 1, 1, 0, 0, 0},
@@ -75,7 +75,7 @@ class TestSet_EstrTest {
     
 
     @Test
-    void CTN5_testCelulaRevive() {
+    void CT3_testCelulaRevive() {
         tabuleiroInicial.setEspaco(new int[][] {
             {0, 1, 0, 0, 0, 0},
             {0, 0, 1, 0, 0, 0},
@@ -98,7 +98,7 @@ class TestSet_EstrTest {
 
 
     @Test
-    void CTN6_testCelulaPermaneceMorta() {
+    void CT4_testCelulaPermaneceMorta() {
         tabuleiroInicial.setEspaco(new int[][] {
             {0, 1, 0, 0, 0, 0},
             {0, 0, 1, 0, 0, 0},
@@ -120,7 +120,7 @@ class TestSet_EstrTest {
     }
     
     @Test
-    void CTD2_testCelulaMorrePorSuperpopulacao() {
+    void CT5_testCelulaMorrePorSuperpopulacao() {
         tabuleiroInicial.setEspaco(new int[][] {
             {1, 1, 1, 0, 0, 0},
             {1, 1, 1, 0, 0, 0},
