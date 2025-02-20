@@ -1,35 +1,35 @@
 package test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.Assert.*;
 
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
 
 import main.Analise;
 import main.Tabuleiro;
 
-class TestSet_EstrTest {
+public class TestSet_EstrTest {
 
     private Tabuleiro tabuleiroInicial;
     private Tabuleiro tabuleiroEsperado;
     private Analise analise;
 
-    @BeforeEach
-    void setUp() {
+    @Before
+    public void setUp() {
         tabuleiroInicial = new Tabuleiro(6);
         tabuleiroEsperado = new Tabuleiro(6);
         analise = new Analise(tabuleiroInicial);
     }
-    @AfterEach
-    void tearDown() {
+    @After
+    public void tearDown() {
     	tabuleiroInicial = null;
         tabuleiroEsperado = null;
         analise = null;
     }
 
     @Test
-    void CT1_testCelulaMorrePorSolidão() {
+    public void CT1_testCelulaMorrePorSolidão() {
         tabuleiroInicial.setEspaco(new int[][] {
             {0, 1, 0, 0, 0, 0},
             {0, 1, 0, 0, 0, 0},
@@ -52,7 +52,7 @@ class TestSet_EstrTest {
     
 
     @Test
-    void CT2_testCelulaPermaneceViva() {
+    public void CT2_testCelulaPermaneceViva() {
         tabuleiroInicial.setEspaco(new int[][] {
             {0, 1, 0, 0, 0, 0},
             {0, 1, 1, 0, 0, 0},
@@ -75,7 +75,7 @@ class TestSet_EstrTest {
     
 
     @Test
-    void CT3_testCelulaRevive() {
+    public void CT3_testCelulaRevive() {
         tabuleiroInicial.setEspaco(new int[][] {
             {0, 1, 0, 0, 0, 0},
             {0, 0, 1, 0, 0, 0},
@@ -98,7 +98,7 @@ class TestSet_EstrTest {
 
 
     @Test
-    void CT4_testCelulaPermaneceMorta() {
+    public void CT4_testCelulaPermaneceMorta() {
         tabuleiroInicial.setEspaco(new int[][] {
             {0, 1, 0, 0, 0, 0},
             {0, 0, 1, 0, 0, 0},
@@ -120,7 +120,7 @@ class TestSet_EstrTest {
     }
     
     @Test
-    void CT5_testCelulaMorrePorSuperpopulacao() {
+    public void CT5_testCelulaMorrePorSuperpopulacao() {
         tabuleiroInicial.setEspaco(new int[][] {
             {1, 1, 1, 0, 0, 0},
             {1, 1, 1, 0, 0, 0},
