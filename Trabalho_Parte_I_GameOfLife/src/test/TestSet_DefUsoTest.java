@@ -1,27 +1,26 @@
 package test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.Assert.*;
 
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.Before;
+import org.junit.Test;
 
 import main.Analise;
 import main.Tabuleiro;
 
-class TestSet_DefUsoTest {
+public class TestSet_DefUsoTest {
 
 	private Tabuleiro tabuleiroInicial;
     private Analise analise;
 
-    @BeforeEach
-    void setUp() {
+    @Before
+    public void setUp() {
         tabuleiroInicial = new Tabuleiro(6); // Tabuleiro 6x6
         analise = new Analise(tabuleiroInicial);
     }
 
     @Test
-    void CT1_testCelulaMorrePorSolidao() {
+    public void CT1_testCelulaMorrePorSolidao() {
         tabuleiroInicial.setEspaco(new int[][] {
             {0, 1, 0, 0, 0, 0},
             {0, 1, 0, 0, 0, 0},
@@ -32,11 +31,11 @@ class TestSet_DefUsoTest {
         });
 
         Tabuleiro resultado = analise.executar(tabuleiroInicial);
-        assertEquals(0, resultado.getEspacoEspecifico(1, 1), "Célula deve morrer por solidão.");
+        assertEquals(0, resultado.getEspacoEspecifico(1, 1));
     }
 
     @Test
-    void CT2_testCelulaPermaneceViva() {
+    public void CT2_testCelulaPermaneceViva() {
         tabuleiroInicial.setEspaco(new int[][] {
             {0, 1, 0, 0, 0, 0},
             {0, 1, 1, 0, 0, 0},
@@ -47,11 +46,11 @@ class TestSet_DefUsoTest {
         });
 
         Tabuleiro resultado = analise.executar(tabuleiroInicial);
-        assertEquals(1, resultado.getEspacoEspecifico(1, 1), "Célula deve permanecer viva.");
+        assertEquals(1, resultado.getEspacoEspecifico(1, 1));
     }
 
     @Test
-    void CT3_testCelulaRevive() {
+    public void CT3_testCelulaRevive() {
         tabuleiroInicial.setEspaco(new int[][] {
             {0, 1, 0, 0, 0, 0},
             {0, 0, 1, 0, 0, 0},
@@ -62,11 +61,11 @@ class TestSet_DefUsoTest {
         });
 
         Tabuleiro resultado = analise.executar(tabuleiroInicial);
-        assertEquals(1, resultado.getEspacoEspecifico(1, 1), "Célula deve reviver.");
+        assertEquals(1, resultado.getEspacoEspecifico(1, 1));
     }
 
     @Test
-    void CT4_testCelulaMorrePorSuperlotacao() {
+    public void CT4_testCelulaMorrePorSuperlotacao() {
         tabuleiroInicial.setEspaco(new int[][] {
             {1, 1, 1, 0, 0, 0},
             {1, 1, 1, 0, 0, 0},
@@ -77,11 +76,11 @@ class TestSet_DefUsoTest {
         });
 
         Tabuleiro resultado = analise.executar(tabuleiroInicial);
-        assertEquals(0, resultado.getEspacoEspecifico(1, 1), "Célula deve morrer por superlotação.");
+        assertEquals(0, resultado.getEspacoEspecifico(1, 1));
     }
 
     @Test
-    void CT5_testCalculoNovoXNovoY_1Vizinho() {
+    public void CT5_testCalculoNovoXNovoY_1Vizinho() {
         tabuleiroInicial.setEspaco(new int[][] {
             {0, 1, 0, 0, 0, 0},
             {0, 1, 0, 0, 0, 0},
@@ -92,11 +91,11 @@ class TestSet_DefUsoTest {
         });
 
         Tabuleiro resultado = analise.executar(tabuleiroInicial);
-        assertEquals(0, resultado.getEspacoEspecifico(1, 1), "Cálculo de novoX e novoY deve funcionar para 1 vizinho vivo.");
+        assertEquals(0, resultado.getEspacoEspecifico(1, 1));
     }
 
     @Test
-    void CT6_testCalculoNovoXNovoY_2Vizinhos() {
+    public void CT6_testCalculoNovoXNovoY_2Vizinhos() {
         tabuleiroInicial.setEspaco(new int[][] {
             {0, 1, 0, 0, 0, 0},
             {0, 1, 1, 0, 0, 0},
@@ -107,11 +106,11 @@ class TestSet_DefUsoTest {
         });
 
         Tabuleiro resultado = analise.executar(tabuleiroInicial);
-        assertEquals(1, resultado.getEspacoEspecifico(1, 1), "Cálculo de novoX e novoY deve funcionar para 2 vizinhos vivos.");
+        assertEquals(1, resultado.getEspacoEspecifico(1, 1));
     }
 
     @Test
-    void CT7_testCalculoNovoXNovoY_3Vizinhos() {
+    public void CT7_testCalculoNovoXNovoY_3Vizinhos() {
         tabuleiroInicial.setEspaco(new int[][] {
             {0, 1, 0, 0, 0, 0},
             {0, 0, 1, 0, 0, 0},
@@ -122,11 +121,11 @@ class TestSet_DefUsoTest {
         });
 
         Tabuleiro resultado = analise.executar(tabuleiroInicial);
-        assertEquals(1, resultado.getEspacoEspecifico(1, 1), "Cálculo de novoX e novoY deve funcionar para 3 vizinhos vivos.");
+        assertEquals(1, resultado.getEspacoEspecifico(1, 1));
     }
 
     @Test
-    void CT8_testCalculoNovoXNovoY_4Vizinhos() {
+    public void CT8_testCalculoNovoXNovoY_4Vizinhos() {
         tabuleiroInicial.setEspaco(new int[][] {
             {1, 1, 1, 0, 0, 0},
             {1, 1, 1, 0, 0, 0},
@@ -137,7 +136,7 @@ class TestSet_DefUsoTest {
         });
 
         Tabuleiro resultado = analise.executar(tabuleiroInicial);
-        assertEquals(0, resultado.getEspacoEspecifico(1, 1), "Cálculo de novoX e novoY deve funcionar para 4 vizinhos vivos.");
+        assertEquals(0, resultado.getEspacoEspecifico(1, 1));
     }
 
 }

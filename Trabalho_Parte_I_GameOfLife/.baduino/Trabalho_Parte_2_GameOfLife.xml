@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model name="Trabalho_Parte_2_GameOfLife">
+    <baduino>C:\Users\filip\Desktop\Repositorio-AspecAvan\Jogo_da_Vida_Conway-Disciplina_DCC168_Teste_de_Software\Trabalho_Parte_I_GameOfLife\.baduino</baduino>
+    <classes>
+        <class>main.Analise</class>
+        <class>main.Interface</class>
+        <class>main.InterfaceComGUI</class>
+        <class>main.Tabuleiro</class>
+        <class>test.TestSet_DefUsoTest</class>
+    </classes>
+    <classes-path>C:\Users\filip\Desktop\Repositorio-AspecAvan\Jogo_da_Vida_Conway-Disciplina_DCC168_Teste_de_Software\Trabalho_Parte_I_GameOfLife\bin</classes-path>
+    <coverage-bin>C:\Users\filip\Desktop\Repositorio-AspecAvan\Jogo_da_Vida_Conway-Disciplina_DCC168_Teste_de_Software\Trabalho_Parte_I_GameOfLife\.baduino\coverage.ser</coverage-bin>
+    <coverage-xml>C:\Users\filip\Desktop\Repositorio-AspecAvan\Jogo_da_Vida_Conway-Disciplina_DCC168_Teste_de_Software\Trabalho_Parte_I_GameOfLife\.baduino\coverage.xml</coverage-xml>
+    <location>C:\Users\filip\Desktop\Repositorio-AspecAvan\Jogo_da_Vida_Conway-Disciplina_DCC168_Teste_de_Software\Trabalho_Parte_I_GameOfLife</location>
+    <path>C:\Users\filip\Desktop\Repositorio-AspecAvan\Jogo_da_Vida_Conway-Disciplina_DCC168_Teste_de_Software\Trabalho_Parte_I_GameOfLife\.baduino\Trabalho_Parte_2_GameOfLife.xml</path>
+</model>
