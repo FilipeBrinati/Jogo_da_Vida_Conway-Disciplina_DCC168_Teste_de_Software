@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Test;
 import main.Analise;
 import main.Tabuleiro;
 
-class TestSet_Func {
+class TestSet_FuncTest {
 	/*
 	 * Essa classe deve ter todos os testes para poderem ser rodados
 	 * apenas uma vez. A separação dos outros arquivos foi realizado
