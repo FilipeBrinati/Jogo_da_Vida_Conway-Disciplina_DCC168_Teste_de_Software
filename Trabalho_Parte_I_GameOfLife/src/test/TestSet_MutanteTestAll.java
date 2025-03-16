@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Test;
 import main.Analise;
 import main.Tabuleiro;
 
-class TestSet_MutanteTest {
+class TestSet_MutanteTestAll {
 
 	private Tabuleiro tabuleiroInicial;
 	private Tabuleiro tabuleiroEsperado;
@@ -652,7 +652,7 @@ class TestSet_MutanteTest {
 			    assertArrayEquals(tabuleiroInicial.getEspaco(), tabuleiroEsperado.getEspaco());
 			}
     
-    //Teste Mutantes
+    //Testes Mutantes
 	
 	@Test
 	void CT16_TestGetNovoTab() {
